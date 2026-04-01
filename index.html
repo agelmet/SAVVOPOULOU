@@ -148,6 +148,15 @@
         .text-glow-effect {
             text-shadow: 0 0 30px rgba(73, 188, 199, 0.3);
         }
+
+        /* Lightbox specific styling */
+        #lightbox {
+            opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+        }
+        #lightbox.active { opacity: 1; pointer-events: auto; }
+        #lightbox img { transform: scale(0.9); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        #lightbox.active img { transform: scale(1); }
     </style>
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -170,6 +179,7 @@
                     <a href="#about" class="text-sm font-medium text-brand-700 hover:text-brand-500 transition-colors tracking-wide">ΠΡΟΦΙΛ</a>
                     <a href="#services" class="text-sm font-medium text-brand-700 hover:text-brand-500 transition-colors tracking-wide">ΥΠΗΡΕΣΙΕΣ</a>
                     <a href="#quality" class="text-sm font-medium text-brand-700 hover:text-brand-500 transition-colors tracking-wide">ΠΡΟΣΕΓΓΙΣΗ</a>
+                    <a href="#space" class="text-sm font-medium text-brand-700 hover:text-brand-500 transition-colors tracking-wide">Ο ΧΩΡΟΣ</a>
                     <a href="#reviews" class="text-sm font-medium text-brand-700 hover:text-brand-500 transition-colors tracking-wide">ΑΞΙΟΛΟΓΗΣΕΙΣ</a>
                     <a href="#contact" class="px-7 py-3 bg-brand-700 text-white rounded-full text-sm font-semibold hover:bg-brand-600 shadow-[0_10px_20px_-10px_rgba(48,131,173,0.5)] transition-all transform hover:-translate-y-0.5">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</a>
                 </div>
@@ -184,6 +194,7 @@
             <a href="#about" class="text-lg font-medium text-brand-900 mobile-link">ΠΡΟΦΙΛ</a>
             <a href="#services" class="text-lg font-medium text-brand-900 mobile-link">ΥΠΗΡΕΣΙΕΣ</a>
             <a href="#quality" class="text-lg font-medium text-brand-900 mobile-link">ΠΡΟΣΕΓΓΙΣΗ</a>
+            <a href="#space" class="text-lg font-medium text-brand-900 mobile-link">Ο ΧΩΡΟΣ</a>
             <a href="#reviews" class="text-lg font-medium text-brand-900 mobile-link">ΑΞΙΟΛΟΓΗΣΕΙΣ</a>
             <a href="#contact" class="px-8 py-3 bg-brand-700 text-white rounded-full text-lg font-semibold mobile-link">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</a>
         </div>
@@ -381,6 +392,71 @@
             </div>
         </div>
     </section>
+
+    <section id="space" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-600 font-semibold tracking-widest text-sm uppercase">Περιβαλλον</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-900 mt-4 mb-4">Ο Χώρος Θεραπείας</h2>
+                <p class="text-brand-700/80 font-light max-w-2xl mx-auto">
+                    Ένα ασφαλές και γαλήνιο περιβάλλον, προσεκτικά σχεδιασμένο για να προσφέρει ηρεμία, ζεστασιά και την απαραίτητη ιδιωτικότητα.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <button class="md:col-span-4 aspect-[4/3] rounded-3xl overflow-hidden group relative reveal shadow-soft border border-brand-100 focus:outline-none" onclick="openLightbox('https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3072.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3072.jpeg?raw=true" alt="Χώρος Θεραπείας 1" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+                <button class="md:col-span-4 aspect-[4/3] rounded-3xl overflow-hidden group relative reveal delay-100 shadow-soft border border-brand-100 focus:outline-none" onclick="openLightbox('https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3071.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3071.jpeg?raw=true" alt="Χώρος Θεραπείας 2" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+                <button class="md:col-span-4 aspect-[4/3] rounded-3xl overflow-hidden group relative reveal delay-200 shadow-soft border border-brand-100 focus:outline-none" onclick="openLightbox('https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3069.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3069.jpeg?raw=true" alt="Χώρος Θεραπείας 3" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+
+                <button class="md:col-span-3 aspect-[4/3] rounded-3xl overflow-hidden group relative reveal shadow-soft border border-brand-100 focus:outline-none" onclick="openLightbox('https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3066.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3066.jpeg?raw=true" alt="Χώρος Θεραπείας 4" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+                <button class="md:col-span-3 aspect-[4/3] rounded-3xl overflow-hidden group relative reveal delay-100 shadow-soft border border-brand-100 focus:outline-none" onclick="openLightbox('https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3061.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3061.jpeg?raw=true" alt="Χώρος Θεραπείας 5" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+                <button class="md:col-span-3 aspect-[4/3] rounded-3xl overflow-hidden group relative reveal delay-200 shadow-soft border border-brand-100 focus:outline-none" onclick="openLightbox('https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3004.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/SAVVOPOULOU/blob/main/IMG_3004.jpeg?raw=true" alt="Χώρος Θεραπείας 6" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+                <button class="md:col-span-3 aspect-[4/3] rounded-3xl overflow-hidden group relative reveal delay-300 shadow-soft border border-brand-100 focus:outline-none" onclick="openLightbox('https://github.com/agelmet/SAVVOPOULOU/blob/main/Gemini_Generated_Image_khprq3khprq3khpr.png?raw=true')">
+                    <img src="https://github.com/agelmet/SAVVOPOULOU/blob/main/Gemini_Generated_Image_khprq3khprq3khpr.png?raw=true" alt="Χώρος Θεραπείας 7" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-900/95 flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors focus:outline-none">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Full size image" class="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl cursor-default" onclick="event.stopPropagation()">
+    </div>
 
     <section id="reviews" class="py-24 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
@@ -662,6 +738,31 @@
 
         document.querySelectorAll('.reveal').forEach(el => {
             observer.observe(el);
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 400); // Wait for transition to finish
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
         });
     </script>
 </body>
