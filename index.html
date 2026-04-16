@@ -93,6 +93,10 @@
         ::-webkit-scrollbar-thumb { background: #8bb4ca; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #4984a3; }
 
+        /* Hide Scrollbar for Slider */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
         /* Smooth Reveal Animations */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -212,18 +216,18 @@
                 ΝΙΚΟΛΙΑ ΣΑΒΒΟΠΟΥΛΟΥ • ΨΥΧΟΛΟΓΟΣ
             </div>
             
-            <h1 class="text-5xl md:text-7xl lg:text-[5rem] font-serif leading-[1.1] mb-8 text-brand-900 text-glow-effect relative">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-serif leading-[1.2] md:leading-[1.1] mb-8 text-brand-900 text-glow-effect relative break-words px-2">
                 Ψυχαναλυτική Προσέγγιση: <br>
-                <span class="text-shimmer animate-shimmer italic inline-block mt-2">Ανακαλύπτοντας την Εσωτερική μας Αλήθεια</span>
+                <span class="text-shimmer animate-shimmer italic block mt-2 text-wrap break-words text-3xl sm:text-4xl md:text-6xl lg:text-7xl">Ανακαλύπτοντας την Εσωτερική μας Αλήθεια</span>
             </h1>
             
-            <p class="text-lg md:text-xl text-brand-700/90 mb-14 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-sm">
+            <p class="text-lg md:text-xl text-brand-700/90 mb-14 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-sm px-2">
                 Σε αντίθεση με προσεγγίσεις που μένουν μόνο στην επιφάνεια του συμπτώματος, δημιουργούμε χώρο για όλα τα συναισθήματα, οδηγώντας σε αληθινή ψυχική αλλαγή.
             </p>
             
             <div class="relative inline-block group">
                 <div class="absolute inset-0 bg-brand-400 rounded-full blur-xl opacity-40 group-hover:opacity-70 group-hover:animate-pulse-slow transition-opacity duration-500"></div>
-                <a href="#contact" class="relative px-12 py-5 bg-gradient-to-r from-brand-700 to-brand-600 text-white rounded-full font-bold text-lg hover:from-brand-600 hover:to-brand-500 transition-all duration-300 shadow-[0_20px_40px_-10px_rgba(48,131,173,0.5)] flex items-center justify-center gap-3 transform group-hover:-translate-y-1 border border-brand-400/30">
+                <a href="#contact" class="relative px-10 md:px-12 py-5 bg-gradient-to-r from-brand-700 to-brand-600 text-white rounded-full font-bold text-base md:text-lg hover:from-brand-600 hover:to-brand-500 transition-all duration-300 shadow-[0_20px_40px_-10px_rgba(48,131,173,0.5)] flex items-center justify-center gap-3 transform group-hover:-translate-y-1 border border-brand-400/30">
                     ΞΕΚΙΝΗΣΤΕ ΤΗ ΘΕΡΑΠΕΙΑ
                     <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300"></i>
                 </a>
@@ -459,8 +463,16 @@
             <p class="text-brand-700/80 font-light text-lg">Η εμπιστοσύνη σας είναι η μεγαλύτερη απόδειξη της δουλειάς μας.</p>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex overflow-x-auto space-x-6 pb-8 snap-x snap-mandatory scrollbar-hide">
+        <div class="max-w-7xl mx-auto relative group">
+            
+            <button onclick="scrollReviews('left')" class="absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-white/90 backdrop-blur shadow-lg text-brand-700 rounded-full hover:bg-brand-50 hover:scale-110 transition-all border border-brand-100 focus:outline-none" aria-label="Προηγούμενη αξιολόγηση">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button onclick="scrollReviews('right')" class="absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-white/90 backdrop-blur shadow-lg text-brand-700 rounded-full hover:bg-brand-50 hover:scale-110 transition-all border border-brand-100 focus:outline-none" aria-label="Επόμενη αξιολόγηση">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+
+            <div id="reviews-slider" class="flex overflow-x-auto space-x-6 pb-8 pt-4 px-8 md:px-10 snap-x snap-mandatory scrollbar-hide scroll-smooth">
                 
                 <div class="w-[85vw] md:w-[380px] shrink-0 snap-center glass-panel p-8 rounded-3xl shadow-soft relative border border-white/60 hover:border-brand-200 transition-colors">
                     <div class="flex justify-between items-start mb-6">
@@ -687,6 +699,19 @@
                 closeLightbox();
             }
         });
+
+        // Reviews Scroll Functionality
+        function scrollReviews(direction) {
+            const container = document.getElementById('reviews-slider');
+            // Calculate scroll amount based on screen size
+            const scrollAmount = window.innerWidth > 768 ? 400 : window.innerWidth * 0.85; 
+            
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>
