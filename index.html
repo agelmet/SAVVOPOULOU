@@ -256,7 +256,6 @@
             
             <!-- Primary Image -->
             <div class="lg:col-span-5 relative reveal">
-                <!-- Height is set to auto or aspect ratio but object-fit contain ensures no cropping -->
                 <div class="rounded-[2.5rem] overflow-hidden shadow-soft glass-panel p-2 z-10 relative bg-brand-50/50">
                     <div class="w-full h-full rounded-[2rem] overflow-hidden relative bg-white/40 flex items-center justify-center">
                         <img src="https://raw.githubusercontent.com/agelmet/SAVVOPOULOU/refs/heads/main/2%20(1).jpg" alt="Νικολία Σαββοπούλου Ψυχολόγος MSc" class="w-full h-[600px] object-contain animate-image-fade-in animate-image-pan origin-center">
@@ -297,18 +296,11 @@
                         <a href="https://doi.org/10.7759/cureus.58411" target="_blank" rel="noopener noreferrer" class="text-brand-600 font-medium hover:text-brand-500 hover:underline transition-colors mt-1 inline-block">https://doi.org/10.7759/cureus.58411</a>
                     </p>
                 </div>
-
-                <!-- Secondary Image Integration -->
-                <div class="mt-10 rounded-[2rem] overflow-hidden glass-panel p-2 shadow-soft hover:shadow-lg transition-shadow duration-500 relative">
-                    <!-- Using auto height so the container adapts naturally to the image's aspect ratio without cropping -->
-                    <img src="https://raw.githubusercontent.com/agelmet/SAVVOPOULOU/refs/heads/main/%CF%86%CF%89%CF%84%CE%BF%CE%B3%CF%81%CE%B1%CF%86%CE%AF%CE%B1.JPG" alt="Συνεδρία - Νικολία Σαββοπούλου" class="w-full h-auto object-contain rounded-[1.5rem] animate-image-fade-in filter brightness-105">
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section with Stacked 2x2 Grid + Right Image -->
     <section id="services" class="py-24 px-6 relative bg-white/50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20 reveal">
@@ -317,52 +309,58 @@
                 <div class="w-16 h-1 bg-brand-400 mx-auto rounded-full opacity-50"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <!-- Custom Grid System for Order Control -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
                 <!-- Service 1 -->
-                <div class="glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal border border-white/80 relative overflow-hidden flex flex-col h-full">
+                <div class="order-1 lg:col-start-1 lg:row-start-1 glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal border border-white/80 relative overflow-hidden flex flex-col h-full">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-brand-100/50 rounded-bl-[100px] -z-10"></div>
                     <div class="w-14 h-14 bg-white shadow-sm border border-brand-50 rounded-2xl flex items-center justify-center mb-8 shrink-0">
                         <i data-lucide="user" class="w-7 h-7 text-brand-600"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-brand-900 mb-4">Ατομική Θεραπεία Ενηλίκων</h3>
-                    <p class="text-brand-700/80 font-light leading-relaxed mb-6 flex-grow">
+                    <p class="text-brand-700/80 font-light leading-relaxed flex-grow">
                         Στόχος είναι η εις βάθος κατανόηση των συμπτωμάτων μέσα από την εξερεύνηση των συναισθημάτων, των συνειδητών και ασυνείδητων πλευρών της ψυχικής ζωής, των ενδοψυχικών συγκρούσεων και των μηχανισμών άμυνας, ακούγοντας προσεκτικά όσα λέει ο θεραπευόμενος.
                     </p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal delay-100 border border-white/80 relative overflow-hidden flex flex-col h-full">
+                <div class="order-2 lg:col-start-2 lg:row-start-1 glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal delay-100 border border-white/80 relative overflow-hidden flex flex-col h-full">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-brand-100/50 rounded-bl-[100px] -z-10"></div>
                     <div class="w-14 h-14 bg-white shadow-sm border border-brand-50 rounded-2xl flex items-center justify-center mb-8 shrink-0">
                         <i data-lucide="baby" class="w-7 h-7 text-brand-600"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-brand-900 mb-4">Θεραπεία Παιδιών και Εφήβων</h3>
-                    <p class="text-brand-700/80 font-light leading-relaxed mb-6 flex-grow">
+                    <p class="text-brand-700/80 font-light leading-relaxed flex-grow">
                         Μέσω της παρατήρησης, του παιχνιδιού, της δημιουργικότητας και της ελεύθερης έκφρασης σκοπός είναι να εμπεριεχθούν και να νοηματοδοτηθούν τα συναισθήματα και οι σκέψεις που μοιάζουν δύσκολα για το παιδί και τον έφηβο, στοχεύοντας στην εδραίωση μιας σταθερής εικόνας εαυτού. Σκοπός είναι να βρουν τη θέση τους μέσα στη δική τους αναπτυξιακή τροχιά.
                     </p>
                 </div>
 
+                <!-- Secondary Image (Appears 3rd on Mobile, right sidebar on Desktop) -->
+                <div class="order-3 lg:col-start-3 lg:row-start-1 lg:row-span-2 glass-panel p-2 rounded-[2.5rem] shadow-soft hover:shadow-lg transition-shadow duration-500 relative reveal delay-100 flex items-center justify-center bg-white/30 h-full min-h-[400px]">
+                    <img src="https://raw.githubusercontent.com/agelmet/SAVVOPOULOU/refs/heads/main/%CF%86%CF%89%CF%84%CE%BF%CE%B3%CF%81%CE%B1%CF%86%CE%AF%CE%B1.JPG" alt="Συνεδρία - Νικολία Σαββοπούλου" class="w-full h-auto max-h-full object-contain rounded-[2rem] animate-image-fade-in filter brightness-105">
+                </div>
+
                 <!-- Service 3 -->
-                <div class="glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal border border-white/80 relative overflow-hidden flex flex-col h-full">
+                <div class="order-4 lg:col-start-1 lg:row-start-2 glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal border border-white/80 relative overflow-hidden flex flex-col h-full">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-brand-100/50 rounded-bl-[100px] -z-10"></div>
                     <div class="w-14 h-14 bg-white shadow-sm border border-brand-50 rounded-2xl flex items-center justify-center mb-8 shrink-0">
                         <i data-lucide="users" class="w-7 h-7 text-brand-600"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-brand-900 mb-4">Συμβουλευτική Υποστήριξη Γονέων</h3>
-                    <p class="text-brand-700/80 font-light leading-relaxed mb-6 flex-grow">
+                    <p class="text-brand-700/80 font-light leading-relaxed flex-grow">
                         Η υποστήριξη των γονέων έχει ως στόχο την πιο ολοκληρωμένη κατανόηση του παιδιού και τον τρόπο που λειτουργεί μέσα στην οικογένεια, αλλά και την κατανόηση που σχετίζεται η οικογένεια στο σύνολό της.
                     </p>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal delay-100 border border-white/80 relative overflow-hidden flex flex-col h-full">
+                <div class="order-5 lg:col-start-2 lg:row-start-2 glass-panel glass-card p-10 rounded-[2.5rem] transition-all duration-500 reveal delay-100 border border-white/80 relative overflow-hidden flex flex-col h-full">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-brand-100/50 rounded-bl-[100px] -z-10"></div>
                     <div class="w-14 h-14 bg-white shadow-sm border border-brand-50 rounded-2xl flex items-center justify-center mb-8 shrink-0">
                         <i data-lucide="monitor-smartphone" class="w-7 h-7 text-brand-600"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-brand-900 mb-4">Online Θεραπεία</h3>
-                    <p class="text-brand-700/80 font-light leading-relaxed mb-6 flex-grow">
+                    <p class="text-brand-700/80 font-light leading-relaxed flex-grow">
                         Η απομακρυσμένη θεραπεία αποτελεί μια εξίσου αποτελεσματική μορφή θεραπείας καθώς αυτό που «θεραπεύει» είναι η σχέση που αναπτύσσεται είτε αυτή είναι δια ζώσης είτε εξ αποστάσεως.
                     </p>
                 </div>
